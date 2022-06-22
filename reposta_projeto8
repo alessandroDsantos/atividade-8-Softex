@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int x, i, j, aux, vetor[30] = {23, 47, 75,  9, 37, 85, 93, 21, 83, 25,
+                                   17, 13, 95, 67, 89,  7, 19,	87,	 5,	41,
+                                   27, 35, 97, 43, 29, 15, 57, 99, 51, 53};
+                                
+    for (i = 0; i < 30; i++){
+        j = vetor[i];
+        for (aux = i - 1;(aux >= 0) && (vetor[aux]> j);aux--){
+            vetor[aux + 1] = vetor[aux];
+        }
+        vetor[aux + 1] = j;
+    }
+     
+    for (x = 0; x < 30; x++){
+        printf("\n|%d|", vetor[x]);
+    }
+    
+
+    return 0;
+}
